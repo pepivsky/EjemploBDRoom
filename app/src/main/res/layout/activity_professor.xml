@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfessorActivity"
+    android:orientation="vertical"
+    >
+
+    <EditText
+        android:id="@+id/edtNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="nombre"
+        />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="email"
+        />
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btnLeer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="leer"
+            />
+
+        <Button
+            android:id="@+id/btnBuscarPorNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="buscar x nombre"
+            />
+
+        <Button
+            android:id="@+id/btnBuscarPorId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="buscar x Id"
+            />
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btnActualizar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Actualizar"
+            />
+
+        <Button
+            android:id="@+id/btnBorrarTodo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Borrar"
+            />
+
+        <Button
+            android:id="@+id/btnBorrarPorId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BorrarxID"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>

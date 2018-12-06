@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CursoActivity"
+    android:orientation="vertical"
+    >
+
+    <EditText
+        android:id="@+id/edtIdProfessor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="idProfessor"
+        />
+
+    <EditText
+        android:id="@+id/edtNombreCurso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="idProfessor"
+        />
+
+    <EditText
+        android:id="@+id/edtDuracionCurso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="idProfessor"
+        />
+
+
+    <Button
+        android:id="@+id/btnGuardarCurso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        />
+
+    <Button
+        android:id="@+id/btnLeerCurso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Leer curso por profesor"
+        />
+
+    <Button
+        android:id="@+id/btnActualizarCurso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Actualizar curso"
+        />
+
+    <Button
+        android:id="@+id/btnBorrarrCurso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Borrar curso"
+        />
+
+</LinearLayout>
