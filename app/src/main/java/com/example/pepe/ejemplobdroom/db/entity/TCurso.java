@@ -9,6 +9,11 @@ import com.example.pepe.ejemplobdroom.constants.Constants;
 
 import static android.arch.persistence.room.ForeignKey.CASCADE;
 
+/**
+ * Tabla TCurso con relación llave foranea (professorID) que es el "id" de la tabla TProfessor
+ * Relación uno a muchos, un curso está dado por un profesor.
+ */
+
 @Entity(tableName = Constants.NAME_TABLE_CURSO,
             foreignKeys = @ForeignKey(entity = TProfessor.class,
             parentColumns = "id",
@@ -16,18 +21,18 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
             onDelete = CASCADE))
 
 public class TCurso {
-
+//Llave primaria autogenerada
     @PrimaryKey(autoGenerate = true)
     public int id;
 
     @ColumnInfo(name = "nombre")
     public String nombre;
 
-    @ColumnInfo(name = "duracion")
+    @ColumnInfo(name = "duracion") //Nombre de la columna: "duracion"
     public String duracion;
 
     @ColumnInfo(name = "professorId")
-    public String professorId;
+    public int professorId;
 
     public int getId() {
         return id;
@@ -53,11 +58,11 @@ public class TCurso {
         this.duracion = duracion;
     }
 
-    public String getProfessorId() {
+    public int getProfessorId() {
         return professorId;
     }
 
-    public void setProfessorId(String professorId) {
+    public void setProfessorId(int professorId) {
         this.professorId = professorId;
     }
 }
