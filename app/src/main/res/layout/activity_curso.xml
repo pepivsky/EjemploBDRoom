@@ -19,14 +19,14 @@
         android:id="@+id/edtNombreCurso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="idProfessor"
+        android:hint="Nombre del curso"
         />
 
     <EditText
         android:id="@+id/edtDuracionCurso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="idProfessor"
+        android:hint="Duración del curso"
         />
 
 

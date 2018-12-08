@@ -22,6 +22,7 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
 
 public class TCurso {
 //Llave primaria autogenerada
+    @ColumnInfo(name = "id")
     @PrimaryKey(autoGenerate = true)
     public int id;
 

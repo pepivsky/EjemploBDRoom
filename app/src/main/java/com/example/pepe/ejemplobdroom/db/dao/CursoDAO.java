@@ -17,7 +17,7 @@ public interface CursoDAO {
     void insert (TCurso tCurso);
 
     @Query("SELECT * FROM  TCurso WHERE professorId = :professorId")
-    List<TCurso> findCursosPorProfessor(int professorId);
+    List<TCurso> buscarCursosPorProfessor(int professorId);
 
     @Update
     void updateCursoPorId(TCurso tCurso);
