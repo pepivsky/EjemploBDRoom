@@ -63,7 +63,7 @@ public class CursoActivity extends AppCompatActivity {
     @OnClick(R.id.btnLeerCurso)
     public void leerCursoxProfessor() {
         listaCursos = AppDB.getAppDB(getApplicationContext()).cursoDAO().buscarCursosPorProfessor(Integer.parseInt(edtIdProfessor.getText().toString()));
-        for (TCurso tCurso:listaCursos) {
+        for (TCurso tCurso : listaCursos) {
             Log.d("TAG", "id:" + tCurso.getId() + " Nombre:" + tCurso.getNombre() + " Duración:" + tCurso.getDuracion() + " ProfessorId:" + tCurso.getProfessorId());
 
         }
@@ -78,6 +78,15 @@ public class CursoActivity extends AppCompatActivity {
         tCurso.setProfessorId(2);
         AppDB.getAppDB(getApplicationContext()).cursoDAO().updateCursoPorId(tCurso);
         Toast.makeText(this, "Se ha actualizado exitosamente", Toast.LENGTH_SHORT).show();
+
+    }
+
+    @OnClick(R.id.btnBorrarrCurso)
+    public void borrarCursoXId() {
+        //Se borra el curso con el Id 1
+        tCurso.setId(1);
+        AppDB.getAppDB(getApplicationContext()).cursoDAO().deleteCursoPorId(tCurso);
+        Toast.makeText(this, "Se ha borrado exitosamente", Toast.LENGTH_SHORT).show();
 
     }
 }
