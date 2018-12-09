@@ -2,6 +2,7 @@ package com.example.pepe.ejemplobdroom;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -58,4 +59,14 @@ public class CursoActivity extends AppCompatActivity {
         AppDB.getAppDB(getApplicationContext()).cursoDAO().insert(tCurso);
         Toast.makeText(this, "Se ha guardado exitosamente", Toast.LENGTH_SHORT).show();
     }
+
+    @OnClick(R.id.btnLeerCurso)
+    public void leerCursoxProfessor() {
+    listaCursos = AppDB.getAppDB(getApplicationContext()).cursoDAO().buscarCursosPorProfessor(Integer.parseInt(edtIdProfessor.getText().toString()));
+    for (TCurso tCurso: listaCursos){
+        Log.d("TAG","id:" + tCurso.getId() + " Nombre:" + tCurso.getNombre()+ " Duración:" + tCurso.getDuracion() + " ProfessorId:" + tCurso.getProfessorId());
+
+    }
+    }
+
 }

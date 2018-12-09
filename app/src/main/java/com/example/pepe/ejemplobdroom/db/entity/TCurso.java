@@ -11,7 +11,7 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
 
 /**
  * Tabla TCurso con relación llave foranea (professorID) que es el "id" de la tabla TProfessor
- * Relación uno a muchos, un curso está dado por un profesor.
+ * Relación uno a muchos, un profesor puede dar varios cursos
  */
 
 @Entity(tableName = Constants.NAME_TABLE_CURSO,

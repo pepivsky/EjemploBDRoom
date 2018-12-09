@@ -46,10 +46,6 @@ public abstract class AppDB extends RoomDatabase {
     static final Migration MIGRACION_1_2 = new Migration(1,2) {
         @Override
         public void migrate(@NonNull SupportSQLiteDatabase database) {
-            /*database.execSQL("CREATE TABLE curso (id INTEGER PRIMARY KEY NOT NULL," +
-                    "nombre TEXT, profesorId INTEGER NOT NULL," +
-                    "FOREIGN KEY (professorID) references TProfessor(id) ON DELETE CASCADE)");*/
-
             database.execSQL("CREATE TABLE tcurso (id INTEGER PRIMARY KEY NOT NULL, nombre TEXT, duracion TEXT, professorId INTEGER NOT NULL, foreign key (professorId) references tprofessor(id) ON DELETE CASCADE)");
         }
     };
