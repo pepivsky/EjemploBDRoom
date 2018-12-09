@@ -62,11 +62,22 @@ public class CursoActivity extends AppCompatActivity {
 
     @OnClick(R.id.btnLeerCurso)
     public void leerCursoxProfessor() {
-    listaCursos = AppDB.getAppDB(getApplicationContext()).cursoDAO().buscarCursosPorProfessor(Integer.parseInt(edtIdProfessor.getText().toString()));
-    for (TCurso tCurso: listaCursos){
-        Log.d("TAG","id:" + tCurso.getId() + " Nombre:" + tCurso.getNombre()+ " Duración:" + tCurso.getDuracion() + " ProfessorId:" + tCurso.getProfessorId());
+        listaCursos = AppDB.getAppDB(getApplicationContext()).cursoDAO().buscarCursosPorProfessor(Integer.parseInt(edtIdProfessor.getText().toString()));
+        for (TCurso tCurso:listaCursos) {
+            Log.d("TAG", "id:" + tCurso.getId() + " Nombre:" + tCurso.getNombre() + " Duración:" + tCurso.getDuracion() + " ProfessorId:" + tCurso.getProfessorId());
+
+        }
+    }
+
+    @OnClick(R.id.btnActualizarCurso)
+    public void ActualizarCursoxId() {
+        //Se actualiza el curso con el Id 2
+        tCurso.setId(2);
+        tCurso.setNombre("Japones");
+        tCurso.setDuracion("14");
+        tCurso.setProfessorId(2);
+        AppDB.getAppDB(getApplicationContext()).cursoDAO().updateCursoPorId(tCurso);
+        Toast.makeText(this, "Se ha actualizado exitosamente", Toast.LENGTH_SHORT).show();
 
     }
-    }
-
 }
