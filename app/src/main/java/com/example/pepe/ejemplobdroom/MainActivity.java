@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnProfessor;
     @BindView(R.id.btnCurso)
     Button btnCurso;
+    @BindView(R.id.btnLenguaje)
+    Button btnLenguaje;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,4 +40,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), CursoActivity.class));
 
     }
+
+    @OnClick(R.id.btnLenguaje)
+    public void irLenguajeActivity() {
+        startActivity(new Intent(getApplicationContext(), LenguajeActivity.class));
+    }
+
 }
