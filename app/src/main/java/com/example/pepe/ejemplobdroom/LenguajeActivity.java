@@ -55,5 +55,11 @@ public class LenguajeActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Se ha guardado exitosamente", Toast.LENGTH_SHORT).show();
     }
 
-    
+    @OnClick(R.id.btnMostrarLenguajes)
+    public void onViewClicked() {
+        listaLenguajes = AppDB.getAppDB(getApplicationContext()).lenguajeDAO().mostrarLenguajes();
+        for (TLenguaje tLenguaje: listaLenguajes){
+            Log.d("TAG", "id:" + tLenguaje.getId()+ " Nombre:" + tLenguaje.getNombre() );
+        }
+    }
 }
