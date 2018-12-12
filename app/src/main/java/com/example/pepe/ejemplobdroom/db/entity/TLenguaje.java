@@ -8,11 +8,11 @@ import android.arch.persistence.room.PrimaryKey;
 import com.example.pepe.ejemplobdroom.constants.Constants;
 
 /**
- * Entidad Lenguaje que hace alusión a los lenguajes de programación
+ * Entidad TLenguaje que hace alusión a los lenguajes de programación
  */
 
 @Entity(tableName = Constants.NAME_TABLE_LENGUAJE)
-public class Lenguaje {
+public class TLenguaje {
 
     //Id
     @ColumnInfo(name = "id")

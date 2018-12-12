@@ -12,7 +12,7 @@
         android:id="@+id/edtNombreLenguaje"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre lenguaje"
+        android:hint="Nombre TLenguaje"
         />
 
     <Button
@@ -33,14 +33,14 @@
         android:id="@+id/btnActualizarLenguaje"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="actualizar lenguaje"
+        android:text="actualizar TLenguaje"
         />
 
     <Button
         android:id="@+id/btnBorrarLenguaje"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="borrar lenguaje"
+        android:text="borrar TLenguaje"
         />
 
 </LinearLayout>
