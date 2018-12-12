@@ -10,8 +10,10 @@ import android.support.annotation.NonNull;
 
 import com.example.pepe.ejemplobdroom.constants.Constants;
 import com.example.pepe.ejemplobdroom.db.dao.CursoDAO;
+import com.example.pepe.ejemplobdroom.db.dao.LenguajeDAO;
 import com.example.pepe.ejemplobdroom.db.dao.ProfessorDAO;
 import com.example.pepe.ejemplobdroom.db.entity.TCurso;
+import com.example.pepe.ejemplobdroom.db.entity.TLenguaje;
 import com.example.pepe.ejemplobdroom.db.entity.TProfessor;
 
 /*
@@ -20,19 +22,21 @@ import com.example.pepe.ejemplobdroom.db.entity.TProfessor;
 * */
 
 //Al introducir otra tabla la version se incrementa y se tiene que hacer una migracion para no perder los datos
-@Database(entities = {TProfessor.class, TCurso.class}, version = 2)
+@Database(entities = {TProfessor.class, TCurso.class, TLenguaje.class}, version = 3)
 public abstract class AppDB extends RoomDatabase {
 
     private static AppDB INSTANCIA;
 
     public abstract ProfessorDAO professorDAO();
     public abstract CursoDAO cursoDAO();
+    public abstract LenguajeDAO lenguajeDAO();
 
     public static  AppDB getAppDB (Context context){
         if (INSTANCIA == null){
             INSTANCIA = Room.databaseBuilder(context.getApplicationContext(), AppDB.class,Constants.NAME_DATABASE)
                     .allowMainThreadQueries()
                     .addMigrations(MIGRACION_1_2) //Linea que permite la migracion
+                    .addMigrations(MIGRACION_2_3) //Segunda migracion
                     .build();
         }
         return INSTANCIA;
@@ -47,6 +51,15 @@ public abstract class AppDB extends RoomDatabase {
         @Override
         public void migrate(@NonNull SupportSQLiteDatabase database) {
             database.execSQL("CREATE TABLE tcurso (id INTEGER PRIMARY KEY NOT NULL, nombre TEXT, duracion TEXT, professorId INTEGER NOT NULL, foreign key (professorId) references tprofessor(id) ON DELETE CASCADE)");
+        }
+    };
+
+
+    //Segunda Migracion
+    static final Migration MIGRACION_2_3 = new Migration(2,3) {
+        @Override
+        public void migrate(@NonNull SupportSQLiteDatabase database) {
+            database.execSQL("CREATE TABLE tlenguaje (id INTEGER PRIMARY KEY NOT NULL, nombre TEXT)");
         }
     };
 }
