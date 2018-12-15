@@ -19,7 +19,7 @@ foreignKeys =
 @ForeignKey(entity = TProfessor.class, parentColumns = "id", childColumns = "professorId"))
 @ForeignKey(entity = TLenguaje.class, parentColumns = "id", childColumns = "lenguajeId")
 
-public class ProfessorLenguaje {
+public class TProfessorLenguaje {
 
     @ColumnInfo(name = "professorId")
     public int professorId;
