@@ -10,14 +10,14 @@
 
     <EditText
         android:id="@+id/profesorId"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Profesor Id"
         />
 
     <EditText
         android:id="@+id/lenguajeId"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Lenguaje Id"
         />
