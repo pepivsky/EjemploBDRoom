@@ -9,6 +9,8 @@ import com.example.pepe.ejemplobdroom.constants.Constants;
 
 /**
  * Entidad TLenguaje que hace alusión a los lenguajes de programación
+ * Creada para hacer la relación de muchos a muchos.
+ * un profesor enseña muchos lenguajes de programacion y muchos lenguajes pueden ser enseñesados por muchos profesores
  */
 
 @Entity(tableName = Constants.NAME_TABLE_LENGUAJE)
