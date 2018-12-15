@@ -58,8 +58,16 @@ public class LenguajeActivity extends AppCompatActivity {
     @OnClick(R.id.btnMostrarLenguajes)
     public void onViewClicked() {
         listaLenguajes = AppDB.getAppDB(getApplicationContext()).lenguajeDAO().mostrarLenguajes();
-        for (TLenguaje tLenguaje: listaLenguajes){
-            Log.d("TAG", "id:" + tLenguaje.getId()+ " Nombre:" + tLenguaje.getNombre() );
+        for (TLenguaje tLenguaje : listaLenguajes) {
+            Log.d("TAG", "id:" + tLenguaje.getId() + " Nombre:" + tLenguaje.getNombre());
         }
+    }
+
+    @OnClick(R.id.btnActualizarLenguaje)
+    public void actualizarCursoxId() {
+        tLenguaje.setId(1);
+        tLenguaje.setNombre("Phyton");
+        AppDB.getAppDB(getApplicationContext()).lenguajeDAO().actualizarLenguajePorId(tLenguaje);
+
     }
 }
