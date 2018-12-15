@@ -64,10 +64,22 @@ public class LenguajeActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.btnActualizarLenguaje)
-    public void actualizarCursoxId() {
+    public void actualizarLenguajexId() {
+        //Actualiza el lenguaje con id = 1
         tLenguaje.setId(1);
         tLenguaje.setNombre("Phyton");
         AppDB.getAppDB(getApplicationContext()).lenguajeDAO().actualizarLenguajePorId(tLenguaje);
+        Log.d("TAG", "Se ha actualizado correctamente" );
+
+
+    }
+
+    @OnClick(R.id.btnBorrarLenguaje)
+    public void borrarLenguajexId() {
+        //Borra el lenguaje con el id = 1
+        tLenguaje.setId(1);
+        AppDB.getAppDB(getApplicationContext()).lenguajeDAO().borrarLenguajePorId(tLenguaje);
+        Log.d("TAG", "Se ha borrado correctamente");
 
     }
 }
