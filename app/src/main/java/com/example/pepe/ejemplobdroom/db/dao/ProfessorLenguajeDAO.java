@@ -4,6 +4,7 @@ import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 
+import com.example.pepe.ejemplobdroom.db.entity.TLenguaje;
 import com.example.pepe.ejemplobdroom.db.entity.TProfessor;
 import com.example.pepe.ejemplobdroom.db.entity.TProfessorLenguaje;
 
@@ -20,6 +21,6 @@ public interface ProfessorLenguajeDAO {
 
 
     @Query("SELECT * FROM tlenguaje INNER JOIN tprofessorlenguaje ON tlenguaje.id = tprofessorlenguaje.lenguajeId WHERE tprofessorlenguaje.professorId=:professorId")
-    List<TProfessor> mostrarLenguajesxProfesor(int professorId);
+    List<TLenguaje> mostrarLenguajesxProfesor(int professorId);
 }
 

@@ -15,9 +15,14 @@ import com.example.pepe.ejemplobdroom.constants.Constants;
 
 @Entity(tableName = Constants.NAME_TABLE_PROFESSORLENGUAJE,
 primaryKeys = {"professorId", "lenguajeId"},
-foreignKeys =
-@ForeignKey(entity = TProfessor.class, parentColumns = "id", childColumns = "professorId"))
-@ForeignKey(entity = TLenguaje.class, parentColumns = "id", childColumns = "lenguajeId")
+foreignKeys ={
+        @ForeignKey(entity = TProfessor.class,
+                parentColumns = "id",
+                childColumns = "professorId"),
+        @ForeignKey(entity = TLenguaje.class,
+                parentColumns = "id",
+                childColumns = "lenguajeId")
+        })
 
 public class TProfessorLenguaje {
 
